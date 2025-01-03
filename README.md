@@ -64,63 +64,65 @@ This React Native app was developed to make cooking easy and enjoyable by provid
 
 ---
 
-## 🚀 Getting Started  
 
-### Prerequisites  
-- **Node.js**  
-- **Expo CLI**  
-- Recipe API key (if applicable)  
+### Installation
 
-### Installation  
+1.  **Clone the Repository**
+        
+   
 
-1. **Clone the Repository**  
-   ```bash
-   git clone https://github.com/your-username/recipe-finder-app.git
-   cd recipe-finder-app
-Install Dependencies
+     git clone https://github.com/labdhi02/FlavourFind.git
+        cd FlavourFind
+    
+2.  **Install Dependencies**
+    
+    `npm install` 
+    
 
-bash
-Copy code
-npm install
-Set Up API Key
-In the main project folder, create a .env file and add your recipe API key:
+3.  **Start the App**
 
-env
-Copy code
-RECIPE_API_KEY='your_api_key_here'
-Start the App
+    
+    `expo start` 
+    
 
-bash
-Copy code
-expo start
-📸 Usage
-Search for a Recipe
-Navigate to the Recipe Search screen, enter a query (e.g., "Pasta" or "Indian"), and view recipe results with detailed instructions and ingredients.
+## 📸 Usage
 
-Save Recipes
-Save your favorite recipes to revisit later.
+1. ## 📸 Usage
 
-Explore Saved Recipes
-Access and manage your saved recipes in the Saved Recipes section.
+1. **Search for Recipes**  
+   Navigate to the “Recipe Search” screen, enter a query (e.g., "Pasta" or "Indian"), and view recipe results with detailed instructions and ingredients.
 
-Contact Us
-Reach out to the developer via the Contact Us screen for support or feedback.
+2. **Recipe by Ingredients**  
+   You can search for recipes based on the ingredients you have. Simply enter the ingredients you have at hand, and FlavourFind will show you recipes that you can make with them.
 
-📚 Technologies Used
-React Native / Expo for mobile development.
-Recipe API (e.g., Spoonacular) for fetching recipe data.
-AsyncStorage for managing saved recipes locally.
-📬 Contact
-Developer: Labdhi Shah
-Email: labdhi200@gmail.com
-GitHub: Labdhi GitHub
-Happy cooking! 🍽️
+3. **Search by Available Ingredients**  
+   You can also use the “Search by Available Ingredients” feature. Choose ingredients from a selection, and FlavourFind will show you recipes you can make with what you currently have in your kitchen.
 
-Instructions:
-Replace placeholders like screenshots/home.png with actual paths to your screenshots.
-Update your-api_key_here, email, and GitHub profile with real data.
-Save the file as README.md in your project root folder.
-vbnet
-Copy code
+4. **Save Recipes**  
+   Save your favorite recipes to your personal collection for easy access later.
 
-This is the corrected version for the installation and usage instructions. Let me know if you 
+5. **Explore Saved Recipes**  
+   View and manage all your saved recipes in the "Saved Recipes" section. You can revisit them at any time.
+
+6. **Contact Us**  
+   Reach out to the developer via the "Contact Us" screen for support, feedback, or suggestions.
+
+
+---
+
+## 📚 Technologies Used
+
+- **React Native / Expo** for mobile app development.
+- **Recipe JSON Data** for fetching recipe data.
+- **AsyncStorage** for managing saved recipes locally.
+
+---
+
+
+## 📬 Contact
+
+-   **Developer:** Labdhi Shah
+-   **Email:** labdhi200@gmail.com
+-   **GitHub:** https://github.com/labdhi02
+
+Happy Cooking!
