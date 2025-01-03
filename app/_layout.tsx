@@ -1,39 +1,95 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+// app/layout.tsx
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Drawer } from 'expo-router/drawer';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
-
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
-
+export default function Layout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Drawer
+        screenOptions={{
+          drawerStyle: {
+            backgroundColor: '#FFD6D6',
+            width: 240,
+          },
+          drawerLabelStyle: {
+            color: 'black',
+            fontSize: 16,
+          },
+          headerStyle: {
+            backgroundColor: 'rgb(255, 102, 102)',
+          },
+          headerTintColor: 'white',
+        }}
+      >
+        
+        <Drawer.Screen
+          name="index"
+          options={{
+            drawerLabel: 'Home',
+            title: 'FlavourFind',
+          }}
+        />
+        
+        <Drawer.Screen
+          name="Recipe"
+          options={{
+            drawerLabel: 'Recipe',
+            title: 'Recipe',
+          }}
+        />
+
+        <Drawer.Screen
+          name="SaveRecipe"
+          options={{
+            drawerLabel: 'Saved Recipe',
+            title: 'Saved Recipe',
+          }}
+        />
+        
+        <Drawer.Screen
+          name="Contact"
+          options={{
+            drawerLabel: 'Contact',
+            title: 'Contact me ',
+          }}
+        />
+
+        <Drawer.Screen
+          name="SearchByIngredients"
+          options={{
+            drawerLabel: () => null, 
+            drawerItemStyle: { display: 'none' }, 
+            title: 'Search By Ingredients',
+          }}
+        />
+
+        <Drawer.Screen
+          name="SearchByRecipe"
+          options={{
+            drawerLabel: () => null, 
+            drawerItemStyle: { display: 'none' }, 
+            title: 'Search By Recipe Name ',
+          }}
+        />
+
+        <Drawer.Screen
+          name="SearchByCusine"
+          options={{
+            drawerLabel: () => null, 
+            drawerItemStyle: { display: 'none' },
+            title: 'Search By Cusine '
+          }}
+        />
+
+        {/* <Drawer.Screen
+          name="SaveRecipe"
+          options={{
+            drawerLabel: 'SavedRecipe',
+            title: 'Savede Recipe',
+          }}
+        /> */}
+        
+      </Drawer>
+    </GestureHandlerRootView>
   );
 }
